@@ -1,21 +1,14 @@
 import axios from "axios";
-import { APIResponse } from "../utilities/types";
+import { APIResponse, movieObject } from "../utilities/types";
 
-interface movieObject {
-  id: string;
-  reviews: Array<number>;
-  title: string;
-  filmCompanyId: string;
-  cost: number;
-  releaseYear: number;
-}
+
 
 interface companyObject {
   id: string;
   name: string;
 }
 
-const getMovieCompanies = (movies: [], setResponse: (b: APIResponse ) => void) => {
+const getMovieCompanies = (movies: [], setLoading: (b: boolean ) => void, setResponse: (b: APIResponse ) => void) => {
   axios({
     method: 'get',
     url: 'http://localhost:3000/movieCompanies',
@@ -40,6 +33,8 @@ const getMovieCompanies = (movies: [], setResponse: (b: APIResponse ) => void) =
         }
       });
 
+      setLoading(false);
+
       // Set parent API response state.
       setResponse({
         success: true,
@@ -47,6 +42,7 @@ const getMovieCompanies = (movies: [], setResponse: (b: APIResponse ) => void) =
       })
   })
   .catch((e) => {
+    setLoading(false)
     // On error, update parent state
     setResponse({
       success: false,
@@ -66,9 +62,10 @@ export const getMovieData = (setLoading: (b: boolean ) => void, setResponse: (b:
     .then(function (response) {
       console.log('movies >> ', response.data);
       // On success, also fetch movie company data
-      getMovieCompanies(response.data, setResponse);
+      getMovieCompanies(response.data, setLoading, setResponse);
   })
     .catch((e) => {
+      setLoading(false);
       // On error, update parent state
       setResponse({
         success: false,

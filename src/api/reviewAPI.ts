@@ -1,11 +1,7 @@
 import axios from "axios";
 
-export const getMovieCompanies = () => {
-  axios({
-    method: 'get',
-    url: 'http://localhost:4321/submitReview',
-    responseType: 'stream'
-  })
+export const addMovieReview = (reviewData: {score: number, message: string, movieId: string}) => {
+  axios.post('http://localhost:4321/submitReview', reviewData)
     .then(function (response) {
       console.log('get response >> ', response);
   });

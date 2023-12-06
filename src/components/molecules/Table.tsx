@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 export const BasicTable = (props: {columns: GridColDef[], rows: Array<{}>}) => {

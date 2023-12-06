@@ -6,7 +6,7 @@ export const movieColumns: GridColDef[] = [
     { field: 'filmCompanyName', headerName: 'Producing Company', width: 200 },
     {
       field: 'averageScore',
-      headerName: 'Average review score',
+      headerName: 'Average Review Score',
       description: 'Mean average of review scores for this movie',
       width: 160
     },
