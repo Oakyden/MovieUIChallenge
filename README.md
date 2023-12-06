@@ -1,3 +1,42 @@
+# Alan Oakden Movie UI Task
+
+This is my submission in response to the Movie UI task
+
+#### Prerequisites
+* Ensure you have separately cloned https://github.com/michaelOptix1/starter-express-api and run `npm start`. Double check it's running locally on `localhost: 3000` or adjust `localhost: 3000` in this project code to match the endpoint being used.
+
+### Getting started
+
+1. Git Clone this repository
+2. `cd` into project root folder
+3. `npm start`
+
+### Completed
+
+* Improved layout and formatting
+* Get endpoints implemented
+* Refresh button for movies
+* Review column shows average scores
+* Review column is sortable
+* Movie review form appears upon row click
+* Error handling
+* Loading handling
+
+### To do
+
+* Utilise docker / containerise in some manner, merge with express project
+* Add unit tests
+* Add stars next to average score text
+
+### Potential Future Improvements
+
+* Customise the theme / enhance UI rather than use default material UI
+* Implement against a full API
+* Implement a responsive table so side scrolling is not required on mobile - [React super responsive table](https://www.npmjs.com/package/react-super-responsive-table)
+* Add a clearer call to action on row select
+
+
+## Original Task
 Our developer was part way through developing the following feature but left the company and you are tasked with picking up where they left off.
 
 The aim is to complete the piece of work by refactoring and improving the current code to get it to a working state that passes all A/C. Use material UI components and a form library where desirable.
