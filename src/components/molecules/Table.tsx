@@ -5,7 +5,7 @@ export const BasicTable = (props: {columns: GridColDef[], rows: Array<{}>, onRow
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
-        onRowClick={(params, event, details) => props.onRowClick(params.row)}
+        onRowClick={(params) => props.onRowClick(params.row)}
         rows={props.rows}
         columns={props.columns}
         initialState={{

@@ -11,7 +11,7 @@ export const averageRating = (numberArray: Array<number>) => {
 export const movieColumns: GridColDef[] = [
     { field: 'id', headerName: 'ID' },
     { field: 'title', headerName: 'Title', width: 200 },
-    { field: 'filmCompanyName', headerName: 'Producing Company', width: 200 },
+    { field: 'movieCompanyName', headerName: 'Producing Company', width: 200 },
     {
       field: 'averageScore',
       headerName: 'Average Review Score',

@@ -7,7 +7,7 @@ interface companyObject {
   name: string;
 }
 
-// Gets movie company data that can be mapped to be mapped to movies
+// Gets movie company data that can in turn be mapped to movies
 const getMovieCompanies = (movies: [], setLoading: (b: boolean ) => void, setResponse: (b: APIResponse ) => void) => {
   axios({
     method: 'get',
@@ -15,8 +15,6 @@ const getMovieCompanies = (movies: [], setLoading: (b: boolean ) => void, setRes
     responseType: 'json'
   })
     .then(function (response) {
-      console.log("movies >>>", movies, "movieCompanies", response.data)
-
       // Collate movie company data with the main movie data object.
       let collatedMovies = movies.map((movie: movieObject) => {
         // Use the movie film company ID to get the full relevant company object.
@@ -25,7 +23,7 @@ const getMovieCompanies = (movies: [], setLoading: (b: boolean ) => void, setRes
          // Return the original movie object, with the company name and average review score added to the object.
         return {
           ...movie,
-          filmCompanyName: relevantCompany.name,
+          movieCompanyName: relevantCompany.name,
           averageScore: averageRating(movie.reviews)
         }
       });
@@ -57,7 +55,7 @@ export const getMovieData = (setLoading: (b: boolean ) => void, setResponse: (b:
     responseType: 'json'
   })
     .then(function (response) {
-      // On success, also fetch movie company data
+      // On success, also fetch movie company data and in turn map a new collated object
       getMovieCompanies(response.data, setLoading, setResponse);
   })
     .catch((e) => {

@@ -29,10 +29,7 @@ Then run `docker run -d --rm -p 5173:5173 --name oak_den uitechtest:latest` to s
 * Error handling
 * Loading handling
 * Utilise docker / containerise in some manner, merge with express project
-
-### To do
-* Add unit tests
-
+* JEST tests
 
 ### Potential Future Improvements
 
@@ -41,6 +38,7 @@ Then run `docker run -d --rm -p 5173:5173 --name oak_den uitechtest:latest` to s
 * Implement a responsive table so side scrolling is not required on mobile - [React super responsive table](https://www.npmjs.com/package/react-super-responsive-table)
 * Add a clearer call to action on row select
 * Add stars next to average score text
+* Add additional Jest tests
 
 
 ## Original Task

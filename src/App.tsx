@@ -16,13 +16,15 @@ export const App = () =>  {
   });
   const [selectedMovie, setSelectedMovie] = useState<movieObject | null>();
 
+  // On first load, get all the movie data required for the table.
   useEffect(() => {
     getMovieData(setLoading, setAPIResponse);
   }, []);
 
+  // Called upon the user pressing the refresh button
   const refreshMovies = () => {
     setLoading(true);
-    getMovieData(setLoading, setAPIResponse)
+    getMovieData(setLoading, setAPIResponse);
   }
 
 
