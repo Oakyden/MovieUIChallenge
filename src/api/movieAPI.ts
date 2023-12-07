@@ -1,5 +1,6 @@
 import axios from "axios";
 import { APIResponse, movieObject } from "../utilities/types";
+import { averageRating } from "../utilities/constants";
 
 interface companyObject {
   id: string;
@@ -14,21 +15,18 @@ const getMovieCompanies = (movies: [], setLoading: (b: boolean ) => void, setRes
     responseType: 'json'
   })
     .then(function (response) {
+      console.log("movies >>>", movies, "movieCompanies", response.data)
+
       // Collate movie company data with the main movie data object.
       let collatedMovies = movies.map((movie: movieObject) => {
         // Use the movie film company ID to get the full relevant company object.
         const relevantCompany = response.data?.find((company: companyObject) => company.id === movie.filmCompanyId)
 
-        // Add an average review score for each movie
-        const sum = movie.reviews?.reduce((accumulator: number, currentValue: number) => accumulator + currentValue, 0) ;
-        const avg =  ( sum / movie.reviews?.length ) || 0;
-        const roundedAvg = Math.round(avg * 10) / 10 
-
-        // Return the original movie object, with the company name and average review score added to the object.
+         // Return the original movie object, with the company name and average review score added to the object.
         return {
           ...movie,
           filmCompanyName: relevantCompany.name,
-          averageScore: roundedAvg
+          averageScore: averageRating(movie.reviews)
         }
       });
 

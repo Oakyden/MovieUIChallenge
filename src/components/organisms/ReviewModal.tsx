@@ -10,6 +10,7 @@ export const ReviewModal = (props: {open: boolean, onClose: () => void, movieObj
     score: 5,
     message: ''
   });
+  
   // Triggered on submitting a review
   const [loading, setLoading] = useState(false);
 

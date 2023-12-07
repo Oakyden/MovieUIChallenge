@@ -6,7 +6,7 @@ This is my submission in response to the Movie UI task
 
 1. Git Clone this repository
 2. `cd` into project root folder
-3. For local dev, run `npm dev`, this will start up the frontend on `http://localhost:5173` and the server on `https://localhost:3000`, feel free to adjust this if required.
+3. For local dev, run `npm run dev`, this will start up the frontend on `http://localhost:5173` and the server on `https://localhost:3000`, feel free to adjust this if required.
 
 ### Optional - Local docker
 
@@ -31,10 +31,8 @@ Then run `docker run -d --rm -p 5173:5173 --name oak_den uitechtest:latest` to s
 * Utilise docker / containerise in some manner, merge with express project
 
 ### To do
-
-
 * Add unit tests
-* Add stars next to average score text
+
 
 ### Potential Future Improvements
 
@@ -42,6 +40,7 @@ Then run `docker run -d --rm -p 5173:5173 --name oak_den uitechtest:latest` to s
 * Implement against a full API linked to a DB
 * Implement a responsive table so side scrolling is not required on mobile - [React super responsive table](https://www.npmjs.com/package/react-super-responsive-table)
 * Add a clearer call to action on row select
+* Add stars next to average score text
 
 
 ## Original Task

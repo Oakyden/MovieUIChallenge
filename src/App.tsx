@@ -3,7 +3,7 @@ import { getMovieData } from './api/movieAPI';
 import { BasicTable } from './components/molecules/Table';
 import { movieColumns } from './utilities/constants';
 import { APIResponse, movieObject } from './utilities/types';
-import { Alert, Box, Button, Container, Modal, Typography } from '@mui/material';
+import { Alert, Button, Container } from '@mui/material';
 import { TableLoader } from './components/molecules/TableLoader';
 import { ReviewModal } from './components/organisms/ReviewModal';
 
@@ -39,6 +39,7 @@ export const App = () =>  {
 
       {!loading && apiResponse.success && (
         <div>
+          <Alert style={{marginBottom: '1rem'}}severity="info">Click on a row to leave a review</Alert>
           <BasicTable onRowClick={setSelectedMovie} columns={movieColumns} rows={apiResponse.response}/>
         </div>
       )}
